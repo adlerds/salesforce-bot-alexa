@@ -17,6 +17,12 @@ exports.SearchHouses = (slots, session, response) => {
                     response.say(`Sorry, I didn't find any that.`);
                 }
             })
+            .catch((err) => {
+                console.error(err);
+                response.say("Oops. Something went wrong");
+            });
+//    session.attributes.stage = "ask_city";
+//    response.ask("OK, in what city?");
 };
 
 exports.AnswerCity = (slots, session, response) => {
